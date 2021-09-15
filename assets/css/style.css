@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@1,300&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -14,56 +15,108 @@ a {
   text-decoration: none;
 }
 
-#myForm {
+header .containerHeader {
   display: flex;
-  justify-content: center;
-  margin: 200px 0 40px 0;
-}
-#myForm #search {
-  padding: 15px 30px;
-}
-#myForm #search:focus {
-  outline: none;
-}
-#myForm a {
-  background: royalblue;
-  border: none;
-  margin-left: -1px;
-  color: #fff;
-  display: flex;
+  justify-content: space-between;
+  width: 960px;
+  margin: 0 auto;
+  height: 100px;
   align-items: center;
-  padding: 0 10px;
+}
+header .containerHeader #myForm #search {
+  padding: 10px 30px;
+  background: #2B3440;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  font-family: Lato, sans-serif;
+  font-size: 1.1rem;
+  outline: 0;
 }
 
 .container {
-  padding: 30px;
-  position: absolute;
-  top: 45%;
-  left: 20%;
-  background: #252525;
-  width: 60%;
-  min-height: 60%;
+  background: #303030;
+  width: 960px;
+  margin: 0 auto;
   color: #fff;
 }
 .container h1 {
+  margin-top: 40px;
+  font-size: 40px;
   text-align: center;
-}
-.container h2 {
-  margin: 10px 0;
+  background-image: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
 }
 .container img {
   width: 200px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px #30363d;
+  border-radius: 5px;
 }
-.container svg {
-  fill: #fff;
+.container h2 {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Titillium Web", sans-serif;
+  background-image: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
 }
-.container .repo {
-  position: relative;
-  top: -230px;
-  left: 43%;
-  z-index: 1;
+
+#gradient {
+  background-image: linear-gradient(270.97deg, #FFE580 -21.36%, #FF7571 -2.45%, #EA5DAD 26.84%, #C2A0FD 64.15%, #3BF0E4 108.29%, #B2F4B6 159.03%);
+  background-size: 200% 200%;
+  -webkit-animation: Animation 10s ease infinite;
+  -moz-animation: Animation 10s ease infinite;
+  animation: Animation 10s ease infinite;
+}
+
+@-webkit-keyframes Animation {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+@-moz-keyframes Animation {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+@keyframes Animation {
+  0% {
+    background-position: 10% 0%;
+  }
+  50% {
+    background-position: 91% 100%;
+  }
+  100% {
+    background-position: 10% 0%;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #232323;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EA5DAD;
 }
 
 /*# sourceMappingURL=style.css.map */
