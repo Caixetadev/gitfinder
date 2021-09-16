@@ -13,13 +13,17 @@ form.addEventListener('submit', (event) => {
   fetch(url).then(res=>res.json()).then(user=> {
     console.log(user)
     if(user.message) {
-      document.querySelector('.container').innerHTML = `
+      const about = document.querySelector('.containerAbout')
+      about.style.display = 'none'
+      document.querySelector('.erro').innerHTML = `
       
       <h1>Não encontrado!!!</h1>
+
 
       `
     } else {
       const about = document.querySelector('.containerAbout')
+      const erro = document.querySelector('.erro')
       about.style.display = 'none'
       const container = document.querySelector('.container')
       container.style.display = 'block'
