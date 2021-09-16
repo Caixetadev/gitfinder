@@ -8,6 +8,7 @@ form.addEventListener('submit', (event) => {
   const userName = search.split(' ').join('')
   
   let url = `https://api.github.com/users/${userName}`
+  
 
   fetch(url).then(res=>res.json()).then(user=> {
     console.log(user)
@@ -18,21 +19,30 @@ form.addEventListener('submit', (event) => {
 
       `
     } else {
+      const about = document.querySelector('.containerAbout')
+      about.style.display = 'none'
       const container = document.querySelector('.container')
+      container.style.display = 'block'
 
       container.innerHTML = `
-      
-      <h1>${user.name}</h1>
-      <h2>@${user.login}</h2>
       <img src="${user.avatar_url}">
-
-      
-      <span>Seguidores ${user.followers}</span>
-      <span>Seguindo ${user.following}</span><br>
-
-      <div class="repo">
-      <span>Repositório ${user.public_repos}</span> 
+      <h1>${user.name || ''}</h1>
+      <h2>@${user.login}</h2>
+      <div class="containerCards">
+      <div class="cards">
+        <p>${user.followers}</p>
+        <h3>Followers</h3>
       </div>
+      <div class="cards">
+        <p>${user.following}</p>
+        <h3>Following</h3>
+      </div>
+      <div class="cards">
+        <p>${user.public_repos}</p>
+        <h3>Repositorios</h3>
+      </div>
+    </div>
+
 
       
       `
@@ -48,13 +58,35 @@ const repos = async () => {
   const url = await fetch(`https://api.github.com/users/${userName}/repos`)
   data = await url.json()
   console.log(data)
+  document.querySelector('.containerRepo').innerHTML = ``
 
   data.forEach(function(repo) {
-    document.querySelector('.container').innerHTML += `
     
+    document.querySelector('.h1').innerHTML = `
+    <h1>All your repositories</h1>
+    `
+    document.querySelector('.containerRepo').innerHTML += `
+
+    <a href="${repo.html_url}" class="repo" target="_blank">
+    <h2>${repo.name}</h2>
+    <p class="oi">${repo.description || ''}</p>
+
+    <ul class="repoInfo">
+    
+    <li>${repo.language || ''}</li>
+    <li class="stars">${repo.stargazers_count}</li>
+    <li class="forks">${repo.forks}</li>
+    
+    
+    </ul>
+
+    </a>
+
     
     `
+
   })
+
 
 }
 

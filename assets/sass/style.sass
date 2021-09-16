@@ -39,13 +39,16 @@ header
         outline: 0
 
 .container
+  display: none
   background: #303030
   width: 960px
-  margin: 0 auto
+  margin: 20px auto
   color: #fff
-  
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.25)
+  border-radius: 5px
+  padding: 20px 20px 20px 20px
+
   h1
-    margin-top: 40px
     font-size: 40px
     text-align: center
     background-image: variables.$gradient
@@ -68,6 +71,75 @@ header
     -webkit-background-clip: text
     -webkit-text-fill-color: transparent
     color: black
+
+  .containerCards
+    margin-top: 10px
+    display: flex
+    justify-content: center
+
+  .cards
+    background: #505050
+    color: #fff
+    border-radius: 0.3125rem
+    margin: 0.35rem
+    width: 150px
+    padding: 15px 20px
+    text-align: center
+
+main
+  .containerRepo
+    width: 960px
+    display: grid
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr))
+    gap: 32px
+    margin: 0 auto
+
+    .repo
+      color: #fff
+      background: #303030
+      border-radius: 8px
+      box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.25)
+      padding: 30px
+
+      h2
+        font-size: 2.5rem
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+      .oi
+        font-size: 1.1rem
+        -webkit-line-clamp: 3 !important
+        -webkit-box-orient: vertical !important
+        overflow: hidden !important
+        text-overflow: ellipsis !important
+        padding: 10px 0 0
+
+      .repoInfo
+        display: flex
+        margin-top: 20px
+        align-self: baseline
+        list-style: none
+
+      .repoInfo li + li
+        margin-left: 30px
+
+      .stars
+        background: url('https://gitfinder-ifnzk5zf7-gabriuda.vercel.app/img/star.svg') no-repeat
+
+      .forks
+        background: url('https://gitfinder-ifnzk5zf7-gabriuda.vercel.app/img/fork.svg') no-repeat
+
+      .forks, .stars
+        padding-left: 20px
+        background-position: 0 70%
+        background-size: 15px
+
+.h1
+  text-align: center
+  color: #fff
+  font-size: 1.6rem
+  margin: 40px
 
 
 #gradient
@@ -110,3 +182,18 @@ header
 
 ::-webkit-scrollbar-thumb
   background: #EA5DAD
+
+
+.containerAbout
+  width: 960px
+  margin: 0 auto
+  color: #fff
+
+  h1
+    text-align: center
+    margin: 40px
+
+  p
+    width: 500px
+    text-align: center
+    margin: 0 auto
