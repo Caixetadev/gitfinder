@@ -14,7 +14,10 @@ form.addEventListener('submit', (event) => {
     console.log(user)
     if(user.message) {
       alert(`${userName} nao encontrado`)
-      document.querySelector('.h1').innerText = `Usuario Não Encontrado.`
+      const erro = document.querySelector('.h2')
+      erro.style.display = 'block'
+      erro.innerHTML = `Usuario Não Encontrado.`
+      document.querySelector('.h1').innerHTML = ``
       const container = document.querySelector('.container')
       const about = document.querySelector('.containerAbout')
       about.style.display = 'none'
@@ -69,6 +72,8 @@ const repos = async () => {
     document.querySelector('.h1').innerHTML = `
     <h1>All your repositories</h1>
     `
+    const erro = document.querySelector('.h2')
+    erro.style.display = 'none'
     document.querySelector('.containerRepo').innerHTML += `
 
     <a href="${repo.html_url}" class="repo" target="_blank">

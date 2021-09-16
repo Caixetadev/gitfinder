@@ -23,6 +23,9 @@ header .containerHeader {
   height: 100px;
   align-items: center;
 }
+header .containerHeader h1 {
+  color: #551a8b;
+}
 header .containerHeader #myForm #search {
   padding: 10px 30px;
   background: #2B3440;
@@ -132,11 +135,19 @@ main .containerRepo .repo .forks, main .containerRepo .repo .stars {
   background-size: 15px;
 }
 
-.h1 {
+main .h1 {
   text-align: center;
   color: #fff;
   font-size: 1.6rem;
   margin: 40px;
+}
+main .h2 {
+  text-align: center;
+  color: #fff;
+  font-size: 1.6rem;
+  margin: 40px;
+  height: 100vh;
+  display: none;
 }
 
 #gradient {
