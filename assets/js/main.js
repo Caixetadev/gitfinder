@@ -14,10 +14,6 @@ form.addEventListener('submit', (event) => {
     console.log(user)
     if(user.message) {
       alert(`${userName} nao encontrado`)
-      const about = document.querySelector('.containerAbout')
-      // about.style.display = 'none'
-      const container = document.querySelector('.container')
-      container.style.display = 'none'
 
     } else {
       const about = document.querySelector('.containerAbout')
