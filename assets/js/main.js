@@ -14,7 +14,11 @@ form.addEventListener('submit', (event) => {
     console.log(user)
     if(user.message) {
       alert(`${userName} nao encontrado`)
-      document.querySelector('.h1').innerHTML = `Usuario Não Encontrado.`
+      document.querySelector('.h1').innerText = `Usuario Não Encontrado.`
+      const container = document.querySelector('.container')
+      const about = document.querySelector('.containerAbout')
+      about.style.display = 'none'
+      container.style.display = 'none'
 
     } else {
       const about = document.querySelector('.containerAbout')
