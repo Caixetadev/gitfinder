@@ -13,11 +13,11 @@ form.addEventListener('submit', (event) => {
   fetch(url).then(res=>res.json()).then(user=> {
     console.log(user)
     if(user.message) {
+      alert(`${userName} nao encontrado`)
       const about = document.querySelector('.containerAbout')
       // about.style.display = 'none'
       const container = document.querySelector('.container')
       container.style.display = 'none'
-      document.querySelector('.h1').innerHTML = `<h1>Não encontrado!!!</h1>`
 
     } else {
       const about = document.querySelector('.containerAbout')
@@ -49,6 +49,8 @@ form.addEventListener('submit', (event) => {
       `
     }
   })
+
+  repos()
 
 })
 
@@ -91,5 +93,5 @@ const repos = async () => {
 
 }
 
-form.addEventListener('submit', repos)
+form.addEventListener('submit')
 
